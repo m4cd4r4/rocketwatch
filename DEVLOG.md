@@ -364,3 +364,149 @@ Route (app)                              Size     First Load JS
 ---
 
 **Session Status**: ✅ Complete — Build passing, deploying to Vercel, accessibility improvements added
+
+---
+
+## Session: December 16, 2025 — Day 11: Accessibility (Complete)
+
+### Context
+Completing Day 11 accessibility requirements: ARIA labels, focus management, keyboard navigation, and WCAG compliance verification.
+
+### Work Completed
+
+#### 1. ARIA Labels and Semantic HTML ✅
+
+**Header Component** ([components/layout/header.tsx](components/layout/header.tsx)):
+- Added `role="banner"` to header element
+- Added `aria-label="Main navigation"` to desktop nav
+- Added `aria-label="RocketWatch home"` to logo link
+- Added `aria-current="page"` to active navigation links
+- Added `aria-expanded` and `aria-controls="mobile-menu"` to mobile menu button
+- Added dynamic aria-label ("Open menu" / "Close menu") based on state
+- Added `aria-hidden="true"` to decorative icons
+
+**Mobile Menu Component** ([components/layout/mobile-menu.tsx](components/layout/mobile-menu.tsx)):
+- Added `id="mobile-menu"` to match `aria-controls` in header button
+- Added `role="dialog"` and `aria-modal="true"` for overlay behavior
+- Added `aria-label="Mobile navigation menu"` to container
+- Added `aria-label="Mobile navigation"` to nav element
+- Added `aria-current="page"` to active links
+- Added `aria-label="Close menu"` to backdrop
+
+---
+
+#### 2. Focus Trap for Modals ✅
+
+**Prediction Modal** ([components/ui/prediction-modal.tsx](components/ui/prediction-modal.tsx)):
+- Implemented full focus trap with keyboard navigation
+- Auto-focus first focusable element when modal opens
+- Tab cycles forward through focusable elements, returns to first from last
+- Shift+Tab cycles backward, returns to last from first
+- ESC key handler to close modal
+- Added `role="dialog"`, `aria-modal="true"`, `aria-labelledby="modal-title"`
+- Added `id="modal-title"` to h2 heading
+- Added `aria-label="Close modal"` to close button
+- Added `aria-hidden="true"` to backdrop and decorative icons
+
+**Implementation Pattern**:
+```typescript
+// Focus trap logic
+const focusableElements = modalElement.querySelectorAll<HTMLElement>(
+  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+);
+// Cycle focus on Tab/Shift+Tab
+// Prevent tabbing outside modal
+```
+
+---
+
+#### 3. Lighthouse Accessibility Audit ✅
+
+**Score**: **97/100** 🎉
+
+**Audit Results**:
+- ✅ ARIA attributes properly used
+- ✅ Color contrast meets WCAG AA standards
+- ✅ Keyboard navigation fully functional
+- ✅ Focus indicators visible
+- ✅ Skip to main content link working
+- ✅ Reduced motion support (prefers-reduced-motion)
+- ✅ Semantic HTML (role="banner", role="dialog", etc.)
+- ✅ Interactive elements have accessible names
+- ❌ **1 Minor Issue**: Heading order (skip from h1 to h3 without h2)
+
+**Color Contrast Verification**:
+- Starlight (#f1f5f9) on Void (#0a0e1a): ✅ Passes WCAG AA
+- Starlight (#f1f5f9) on Cosmos (#0f1629): ✅ Passes WCAG AA
+- Stardust (#9ca3af) on Void (#0a0e1a): ✅ Passes WCAG AA
+- All accent colors on dark backgrounds: ✅ Pass
+
+---
+
+### Day 11 Checklist
+
+- ✅ **Keyboard Navigation**: Tab order, focus visible states, skip link
+- ✅ **ARIA Labels**: role, aria-label, aria-current, aria-expanded, aria-controls
+- ✅ **Focus Trap**: Implemented for modals with ESC key support
+- ✅ **Skip to Main Content**: Hidden until focused, smooth navigation
+- ✅ **Reduced Motion**: prefers-reduced-motion CSS (from Day 9)
+- ✅ **Color Contrast**: WCAG AA verified via Lighthouse
+- ✅ **Lighthouse Audit**: 97/100 score
+
+---
+
+### Commits
+
+```bash
+# Commit 1: ARIA and focus trap
+01818e8 "feat: Add comprehensive ARIA labels and focus trap for accessibility"
+```
+
+---
+
+### Technical Decisions
+
+| Area | Decision | Rationale |
+|------|----------|-----------|
+| **Focus trap** | Implement custom with Tab/Shift+Tab handling | Avoid external dependencies, full control |
+| **ARIA labels** | Descriptive, context-aware | Dynamic labels (e.g., "Open menu" / "Close menu") |
+| **Modal role** | Use role="dialog" with aria-modal="true" | Standard pattern for modal overlays |
+| **Icon accessibility** | Add aria-hidden="true" to decorative icons | Prevent screen reader clutter |
+| **Skip link styling** | sr-only + focus:not-sr-only pattern | Hidden until keyboard focus, then visible |
+
+---
+
+### Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Lighthouse Accessibility Score** | 97/100 🎉 |
+| **ARIA Attributes Added** | 15+ |
+| **Focus Trap Implementation** | ✅ Complete |
+| **WCAG AA Compliance** | ✅ Verified |
+| **Failing Audits** | 1 (heading order - minor) |
+| **Files Modified** | 3 |
+
+---
+
+### Remaining Minor Issues
+
+1. **Heading Order** (Low Priority)
+   - Issue: Skip from h1 to h3 without h2
+   - Impact: Minor - affects semantic structure
+   - Fix: Review page heading hierarchy
+   - Status: Deferred to polish phase
+
+---
+
+### Lessons Learned
+
+1. **Focus Trap Pattern**: Query all focusable elements, cycle on Tab/Shift+Tab boundary
+2. **ARIA Label Dynamics**: Labels should update based on component state (open/closed)
+3. **Modal Accessibility**: role="dialog" + aria-modal + focus trap + ESC key = complete pattern
+4. **Lighthouse Automation**: Excellent for catching ARIA misuse and contrast issues
+5. **Skip Links**: Must be first focusable element in DOM for proper keyboard flow
+
+---
+
+**Day 11 Status**: ✅ Complete — 97/100 Lighthouse score, all major accessibility features implemented
