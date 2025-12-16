@@ -1,8 +1,26 @@
+import type { Metadata } from 'next';
 import { HeroSection } from '@/components/home/hero-section';
 import { StatusBar } from '@/components/home/status-bar';
 import { UpcomingLaunches } from '@/components/home/upcoming-launches';
 import { FeaturedVideos } from '@/components/home/featured-videos';
 import { AgencyRow } from '@/components/home/agency-row';
+
+export const metadata: Metadata = {
+  title: 'RocketWatch - Track Every Space Launch',
+  description:
+    'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
+  openGraph: {
+    title: 'RocketWatch - Track Every Space Launch',
+    description:
+      'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'RocketWatch - Track Every Space Launch',
+    description:
+      'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
+  },
+};
 
 export default function Home(): JSX.Element {
   return (

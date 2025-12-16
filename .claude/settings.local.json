@@ -18,7 +18,13 @@
       "Bash(pkill:*)",
       "Bash(python -m json.tool:*)",
       "Bash(vercel --yes:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npx lighthouse:*)",
+      "Bash(cat:*)",
+      "Bash(node -e:*)",
+      "Bash(node check-lighthouse.js:*)",
+      "Bash(node parse-lighthouse.js:*)",
+      "Bash(npm start)"
     ]
   }
 }

@@ -27,15 +27,70 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'RocketWatch - For the love of space',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://rocketwatch.app'),
+  title: {
+    default: 'RocketWatch - For the love of space',
+    template: '%s | RocketWatch',
+  },
   description:
     'A free, inclusive space hub for everyone from 5-year-olds to aerospace engineers. Track launches, watch live streams, and explore the cosmos.',
-  keywords: ['space', 'rockets', 'launches', 'SpaceX', 'NASA', 'astronomy'],
+  keywords: [
+    'space',
+    'rockets',
+    'launches',
+    'SpaceX',
+    'NASA',
+    'astronomy',
+    'live streams',
+    'rocket launches',
+    'space exploration',
+    'satellites',
+    'astronauts',
+    'space agencies',
+    'launch schedule',
+  ],
   authors: [{ name: 'RocketWatch' }],
+  creator: 'RocketWatch',
+  publisher: 'RocketWatch',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: 'RocketWatch',
+    title: 'RocketWatch - For the love of space',
+    description: 'Track every space launch, past, present, and future. Watch live streams and explore the cosmos.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'RocketWatch - Track space launches',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'RocketWatch - For the love of space',
     description: 'Track every space launch, past, present, and future.',
-    type: 'website',
+    images: ['/og-image.png'],
+    creator: '@rocketwatch',
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

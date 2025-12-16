@@ -1,0 +1,12 @@
+# RocketWatch robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rocketwatch.app/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 0
+
+# Disallow admin or API routes if needed in the future
+# Disallow: /api/
