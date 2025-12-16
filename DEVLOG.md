@@ -206,3 +206,161 @@ Based on 2-week MVP roadmap (SKILL.md):
 ---
 
 **Session Status**: ✅ Complete — All tests passing, homepage fully functional with mock data
+
+---
+
+## Session: December 16, 2025 — TypeScript Fixes & Vercel Deployment
+
+### Context
+Attempting to deploy to Vercel revealed multiple TypeScript errors that prevented production build. Systematically fixed all type errors to enable successful deployment.
+
+### Work Completed
+
+#### 1. TypeScript Type Errors Fixed ✅
+
+**Problem**: Production build (`npm run build`) was failing with TypeScript errors preventing Vercel deployment.
+
+**Errors Fixed**:
+
+1. **Variable Scope Issues**
+   - [app/api/launches/upcoming/route.ts](app/api/launches/upcoming/route.ts#L14-L16)
+   - Moved `limit` and `offset` outside try block so accessible in catch fallback
+
+2. **VehicleSummary Type Mismatches**
+   - [lib/data/mock-launches.ts](lib/data/mock-launches.ts)
+   - [app/api/predictions/route.ts:100](app/api/predictions/route.ts#L100)
+   - Removed invalid `family` and `variant` properties (not in VehicleSummary interface)
+   - Added required `provider` property
+
+3. **Vehicle Type Property Errors**
+   - [app/vehicles/page.tsx](app/vehicles/page.tsx)
+   - Changed `manufacturer` → `provider` (correct property name)
+   - Removed top-level `reusable` (exists in `specs` object)
+   - Removed `pendingLaunches` (not in Vehicle interface)
+   - Added required `type: 'rocket'` property
+
+4. **VehicleSpecs Type Errors**
+   - [app/vehicles/page.tsx:23](app/vehicles/page.tsx#L23)
+   - Changed `payloadCapacity` → `massToLEO` (correct property name)
+   - Removed `crewCapacity` (not in VehicleSpecs interface)
+   - [components/vehicle/vehicle-card.tsx:114](components/vehicle/vehicle-card.tsx#L114)
+   - Changed `vehicle.reusable` → `vehicle.specs.reusable`
+   - Removed crew capacity display section (lines 157-168)
+
+5. **Date Type Errors**
+   - [app/vehicles/page.tsx:24](app/vehicles/page.tsx#L24)
+   - Changed `firstFlight: '2010-06-04'` → `firstFlight: new Date('2010-06-04')`
+   - Fixed for both Falcon 9 and Starship entries
+
+6. **Badge Variant Type Errors**
+   - [components/vehicle/vehicle-card.tsx:48-61](components/vehicle/vehicle-card.tsx#L48-L61)
+   - Changed `return 'default'` → `return 'tbd'` (valid Badge variant)
+   - [components/video/video-modal.tsx:170](components/video/video-modal.tsx#L170)
+   - Changed `variant="default"` → `variant="tbd"`
+
+7. **LaunchStatus Name Type Error**
+   - [lib/data/mock-launches.ts:129](lib/data/mock-launches.ts#L129)
+   - Changed `name: 'To Be Confirmed'` → `name: 'TBD'` (valid status)
+
+8. **Card asChild Property Error**
+   - [components/home/upcoming-launches.tsx:56](components/home/upcoming-launches.tsx#L56)
+   - Removed `asChild` prop (not supported by Card component)
+
+**Build Result**: ✅ Successfully compiled with 0 errors
+
+```
+Route (app)                              Size     First Load JS
+┌ ○ /                                    9.07 kB         135 kB
+├ ○ /agencies                            4.57 kB         116 kB
+├ ○ /launches                            3.44 kB         113 kB
+├ ○ /vehicles                            3.8 kB          115 kB
+└ ○ /videos                              2.62 kB         125 kB
+```
+
+---
+
+#### 2. Accessibility Improvements ✅
+
+**Added**: Skip-to-main-content link for keyboard navigation
+
+**Files Modified**:
+- [app/layout.tsx:52-58](app/layout.tsx#L52-L58) - Added skip link (hidden, visible on focus)
+- [app/layout.tsx:63](app/layout.tsx#L63) - Added `id="main-content"` to main element
+
+**Pattern**:
+```tsx
+<a
+  href="#main-content"
+  className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4..."
+>
+  Skip to main content
+</a>
+```
+
+**Already Implemented** (from previous days):
+- Focus-visible styles (global CSS)
+- Reduced motion support (`prefers-reduced-motion`)
+- Button focus states
+- Keyboard navigation
+
+---
+
+### Commits
+
+```bash
+# Commit 1: Test results cleanup
+301c2f5 "test: Update test results - all 8 E2E tests passing"
+
+# Commit 2: TypeScript fixes
+7829a66 "fix: TypeScript errors for production build"
+```
+
+---
+
+### Deployment
+
+**Status**: 🚀 Deploying to Vercel
+
+**Previous Attempt**: Failed due to TypeScript errors
+**Current Attempt**: In progress with all errors resolved
+
+**Preview URL**: https://thegreatexpanse-4l477nwaj-m4cd4r4s-projects.vercel.app
+
+---
+
+### Technical Decisions
+
+| Issue | Decision | Rationale |
+|-------|----------|-----------|
+| **VehicleSummary structure** | Remove family/variant | Simplify to match interface (id, name, image?, provider) |
+| **Badge default variant** | Use 'tbd' for gray/neutral | No 'default' variant exists in Badge component |
+| **Vehicle reusable property** | Move to specs object | Matches Vehicle interface structure |
+| **Date types** | Convert strings to Date objects | TypeScript requires Date type for firstFlight |
+| **Crew capacity** | Remove display | Not in VehicleSpecs interface (future enhancement) |
+
+---
+
+### Metrics
+
+| Metric | Value |
+|--------|-------|
+| **TypeScript Errors Fixed** | 10+ distinct issues |
+| **Files Modified** | 10 |
+| **Build Status** | ✅ Passing (0 errors) |
+| **Bundle Size** | ~135 kB first load (homepage) |
+| **Accessibility Features** | Skip link, focus states, reduced motion |
+| **Deployment** | In progress to Vercel |
+
+---
+
+### Lessons Learned
+
+1. **TypeScript Strict Mode**: Catches many issues before production - validates against actual interfaces
+2. **Badge Variant Consistency**: Badge component only accepts specific variants (live, upcoming, success, failure, tbd, partial)
+3. **Interface Compliance**: Mock data and test fixtures must exactly match TypeScript interfaces
+4. **Build Before Deploy**: Always run `npm run build` locally before deploying to catch type errors
+5. **Incremental Fixes**: Fix one error at a time - each fix may reveal the next error
+
+---
+
+**Session Status**: ✅ Complete — Build passing, deploying to Vercel, accessibility improvements added
