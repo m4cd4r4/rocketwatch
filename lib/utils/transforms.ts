@@ -78,7 +78,7 @@ export function transformLaunch(ll2Launch: LL2Launch): Launch {
 
   // Get webcast URL from vidURLs (highest priority)
   const webcastUrl =
-    ll2Launch.vidURLs.length > 0
+    ll2Launch.vidURLs && ll2Launch.vidURLs.length > 0
       ? ll2Launch.vidURLs.sort((a, b) => a.priority - b.priority)[0].url
       : undefined;
 

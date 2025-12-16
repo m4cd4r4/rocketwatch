@@ -1,29 +1,290 @@
 # Page snapshot
 
 ```yaml
-- dialog "Unhandled Runtime Error" [ref=e3]:
-  - generic [ref=e4]:
+- generic [ref=e2]:
+  - banner [ref=e3]:
     - generic [ref=e5]:
-      - generic [ref=e6]:
-        - navigation [ref=e7]:
-          - button "previous" [disabled] [ref=e8]:
-            - img "previous" [ref=e9]
-          - button "next" [disabled] [ref=e11]:
-            - img "next" [ref=e12]
-          - generic [ref=e14]: 1 of 1 error
-          - generic [ref=e15]:
-            - text: Next.js (14.2.35) is outdated
-            - link "(learn more)" [ref=e17] [cursor=pointer]:
-              - /url: https://nextjs.org/docs/messages/version-staleness
-        - button "Close" [ref=e18] [cursor=pointer]:
-          - img [ref=e20]
-      - heading "Unhandled Runtime Error" [level=1] [ref=e23]
-      - paragraph [ref=e24]: "Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports. Check the render method of `Badge`."
-    - generic [ref=e25]:
-      - heading "Call Stack" [level=2] [ref=e26]
-      - group [ref=e27]:
-        - generic "React" [ref=e28] [cursor=pointer]:
-          - img [ref=e29]
-          - img [ref=e31]
-          - text: React
+      - link "RocketWatch" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - text: RocketWatch
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Launches" [ref=e14] [cursor=pointer]:
+          - /url: /launches
+        - link "Live" [ref=e15] [cursor=pointer]:
+          - /url: /live
+        - link "Agencies" [ref=e16] [cursor=pointer]:
+          - /url: /explorers
+        - link "Vehicles" [ref=e17] [cursor=pointer]:
+          - /url: /vehicles
+      - generic [ref=e18]:
+        - generic [ref=e20]:
+          - button "Explorer" [ref=e21]:
+            - img [ref=e22]
+            - text: Explorer
+          - button "Cadet" [pressed] [ref=e24]:
+            - img [ref=e25]
+            - text: Cadet
+          - button "Mission Control" [ref=e30]:
+            - img [ref=e31]
+            - text: Mission Control
+        - button "Toggle menu" [ref=e38]:
+          - img [ref=e39]
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - img [ref=e44]
+          - heading "Space Agencies" [level=1] [ref=e48]
+        - paragraph [ref=e49]: Explore space agencies and companies from around the world
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - text: "Filter by type:"
+        - button "all (6)" [ref=e54]
+        - button "government (3)" [ref=e55]
+        - button "commercial (2)" [ref=e56]
+        - button "international (1)" [ref=e57]
+      - generic [ref=e58]:
+        - link "Space Exploration Technologies Corp. logo SpaceX United States commercial 250 Total Launches 98% Success Rate 245 5 45 Founded 2002" [ref=e59] [cursor=pointer]:
+          - /url: /agencies/121
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - img "Space Exploration Technologies Corp. logo" [ref=e62]
+              - heading "SpaceX" [level=3] [ref=e63]
+              - paragraph [ref=e64]: United States
+              - generic [ref=e65]:
+                - img [ref=e66]
+                - text: commercial
+              - paragraph
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - generic [ref=e71]:
+                  - generic [ref=e72]: "250"
+                  - generic [ref=e73]: Total Launches
+                - generic [ref=e74]:
+                  - generic [ref=e75]: 98%
+                  - generic [ref=e76]: Success Rate
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - img [ref=e79]
+                  - text: "245"
+                - generic [ref=e82]:
+                  - img [ref=e83]
+                  - text: "5"
+                - generic [ref=e87]:
+                  - img [ref=e88]
+                  - text: "45"
+              - generic [ref=e91]: Founded 2002
+        - link "National Aeronautics and Space Administration logo NASA United States government 300 Total Launches 95% Success Rate 285 15 12 Founded 1958" [ref=e92] [cursor=pointer]:
+          - /url: /agencies/44
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - img "National Aeronautics and Space Administration logo" [ref=e95]
+              - heading "NASA" [level=3] [ref=e96]
+              - paragraph [ref=e97]: United States
+              - generic [ref=e98]:
+                - img [ref=e99]
+                - text: government
+              - paragraph
+            - generic [ref=e102]:
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: "300"
+                  - generic [ref=e106]: Total Launches
+                - generic [ref=e107]:
+                  - generic [ref=e108]: 95%
+                  - generic [ref=e109]: Success Rate
+              - generic [ref=e110]:
+                - generic [ref=e111]:
+                  - img [ref=e112]
+                  - text: "285"
+                - generic [ref=e115]:
+                  - img [ref=e116]
+                  - text: "15"
+                - generic [ref=e120]:
+                  - img [ref=e121]
+                  - text: "12"
+              - generic [ref=e124]: Founded 1958
+        - link "European Space Agency logo ESA Europe international 85 Total Launches 94% Success Rate 80 5 8 Founded 1975" [ref=e125] [cursor=pointer]:
+          - /url: /agencies/27
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - img "European Space Agency logo" [ref=e128]
+              - heading "ESA" [level=3] [ref=e129]
+              - paragraph [ref=e130]: Europe
+              - generic [ref=e131]:
+                - img [ref=e132]
+                - text: international
+              - paragraph
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - generic [ref=e138]: "85"
+                  - generic [ref=e139]: Total Launches
+                - generic [ref=e140]:
+                  - generic [ref=e141]: 94%
+                  - generic [ref=e142]: Success Rate
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - img [ref=e145]
+                  - text: "80"
+                - generic [ref=e148]:
+                  - img [ref=e149]
+                  - text: "5"
+                - generic [ref=e153]:
+                  - img [ref=e154]
+                  - text: "8"
+              - generic [ref=e157]: Founded 1975
+        - link "Russian Federal Space Agency logo Roscosmos Russia government 180 Total Launches 92% Success Rate 165 15 15 Founded 1992" [ref=e158] [cursor=pointer]:
+          - /url: /agencies/63
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - img "Russian Federal Space Agency logo" [ref=e161]
+              - heading "Roscosmos" [level=3] [ref=e162]
+              - paragraph [ref=e163]: Russia
+              - generic [ref=e164]:
+                - img [ref=e165]
+                - text: government
+              - paragraph
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]:
+                  - generic [ref=e171]: "180"
+                  - generic [ref=e172]: Total Launches
+                - generic [ref=e173]:
+                  - generic [ref=e174]: 92%
+                  - generic [ref=e175]: Success Rate
+              - generic [ref=e176]:
+                - generic [ref=e177]:
+                  - img [ref=e178]
+                  - text: "165"
+                - generic [ref=e181]:
+                  - img [ref=e182]
+                  - text: "15"
+                - generic [ref=e186]:
+                  - img [ref=e187]
+                  - text: "15"
+              - generic [ref=e190]: Founded 1992
+        - link "China National Space Administration logo CNSA China government 95 Total Launches 97% Success Rate 92 3 20 Founded 1993" [ref=e191] [cursor=pointer]:
+          - /url: /agencies/17
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - img "China National Space Administration logo" [ref=e194]
+              - heading "CNSA" [level=3] [ref=e195]
+              - paragraph [ref=e196]: China
+              - generic [ref=e197]:
+                - img [ref=e198]
+                - text: government
+              - paragraph
+            - generic [ref=e201]:
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - generic [ref=e204]: "95"
+                  - generic [ref=e205]: Total Launches
+                - generic [ref=e206]:
+                  - generic [ref=e207]: 97%
+                  - generic [ref=e208]: Success Rate
+              - generic [ref=e209]:
+                - generic [ref=e210]:
+                  - img [ref=e211]
+                  - text: "92"
+                - generic [ref=e214]:
+                  - img [ref=e215]
+                  - text: "3"
+                - generic [ref=e219]:
+                  - img [ref=e220]
+                  - text: "20"
+              - generic [ref=e223]: Founded 1993
+        - link "Blue Origin logo Blue Origin United States commercial 25 Total Launches 100% Success Rate 25 0 6 Founded 2000" [ref=e224] [cursor=pointer]:
+          - /url: /agencies/141
+          - generic [ref=e225]:
+            - generic [ref=e226]:
+              - img "Blue Origin logo" [ref=e227]
+              - heading "Blue Origin" [level=3] [ref=e228]
+              - paragraph [ref=e229]: United States
+              - generic [ref=e230]:
+                - img [ref=e231]
+                - text: commercial
+              - paragraph
+            - generic [ref=e234]:
+              - generic [ref=e235]:
+                - generic [ref=e236]:
+                  - generic [ref=e237]: "25"
+                  - generic [ref=e238]: Total Launches
+                - generic [ref=e239]:
+                  - generic [ref=e240]: 100%
+                  - generic [ref=e241]: Success Rate
+              - generic [ref=e242]:
+                - generic [ref=e243]:
+                  - img [ref=e244]
+                  - text: "25"
+                - generic [ref=e247]:
+                  - img [ref=e248]
+                  - text: "0"
+                - generic [ref=e252]:
+                  - img [ref=e253]
+                  - text: "6"
+              - generic [ref=e256]: Founded 2000
+      - generic [ref=e257]:
+        - generic [ref=e258]:
+          - generic [ref=e259]: "6"
+          - generic [ref=e260]: Agencies
+        - generic [ref=e261]:
+          - generic [ref=e262]: "935"
+          - generic [ref=e263]: Total Launches
+        - generic [ref=e264]:
+          - generic [ref=e265]: "106"
+          - generic [ref=e266]: Pending Launches
+        - generic [ref=e267]:
+          - generic [ref=e268]: 95%
+          - generic [ref=e269]: Overall Success Rate
+      - paragraph [ref=e271]: "Note: Agency data is currently mocked. Phase 2 will integrate Launch Library 2 API for real-time information."
+  - contentinfo [ref=e272]:
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - generic [ref=e276]:
+            - img [ref=e277]
+            - text: RocketWatch
+          - paragraph [ref=e282]: For the love of space. A free, inclusive space launch tracking platform for everyone from 5-year-olds to aerospace engineers.
+          - generic [ref=e283]:
+            - link "GitHub" [ref=e284] [cursor=pointer]:
+              - /url: https://github.com
+              - img [ref=e285]
+            - link "Twitter" [ref=e288] [cursor=pointer]:
+              - /url: https://twitter.com
+              - img [ref=e289]
+            - link "YouTube" [ref=e291] [cursor=pointer]:
+              - /url: https://youtube.com
+              - img [ref=e292]
+        - generic [ref=e295]:
+          - heading "Explore" [level=3] [ref=e296]
+          - list [ref=e297]:
+            - listitem [ref=e298]:
+              - link "Launches" [ref=e299] [cursor=pointer]:
+                - /url: /launches
+            - listitem [ref=e300]:
+              - link "Live" [ref=e301] [cursor=pointer]:
+                - /url: /live
+            - listitem [ref=e302]:
+              - link "Agencies" [ref=e303] [cursor=pointer]:
+                - /url: /explorers
+            - listitem [ref=e304]:
+              - link "Vehicles" [ref=e305] [cursor=pointer]:
+                - /url: /vehicles
+        - generic [ref=e306]:
+          - heading "Data Sources" [level=3] [ref=e307]
+          - list [ref=e308]:
+            - listitem [ref=e309]:
+              - link "The Space Devs" [ref=e310] [cursor=pointer]:
+                - /url: https://thespacedevs.com
+            - listitem [ref=e311]:
+              - link "Launch Library 2" [ref=e312] [cursor=pointer]:
+                - /url: https://thespacedevs.com/llapi
+      - generic [ref=e313]:
+        - paragraph [ref=e314]: © 2025 RocketWatch. Built with love for space exploration.
+        - paragraph [ref=e315]: Free forever. No accounts. No paywalls. Just space. 🚀
 ```

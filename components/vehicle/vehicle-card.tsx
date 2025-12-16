@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/card';
 import { Badge } from '../ui/badge';
-import { Ruler, Weight, Users, Rocket, TrendingUp } from 'lucide-react';
+import { Ruler, Scale, Users, Rocket, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { useUserPreferences } from '@/lib/stores/preferences';
 import type { Vehicle } from '@/types/vehicle';
@@ -141,7 +141,7 @@ export function VehicleCard({ vehicle, variant = 'default', className }: Vehicle
                 {vehicle.specs.mass && (
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-2 text-stardust">
-                      <Weight className="h-4 w-4" />
+                      <Scale className="h-4 w-4" />
                       <span>Mass</span>
                     </div>
                     <span className="font-medium text-starlight">

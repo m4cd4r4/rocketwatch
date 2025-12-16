@@ -1,207 +1,208 @@
 # Page snapshot
 
 ```yaml
-- generic [active] [ref=e1]:
-  - generic [ref=e2]:
-    - banner [ref=e3]:
-      - generic [ref=e5]:
-        - link "RocketWatch" [ref=e6] [cursor=pointer]:
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "RocketWatch" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - text: RocketWatch
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
           - /url: /
-          - img [ref=e7]
-          - generic [ref=e12]: RocketWatch
-        - navigation [ref=e13]:
-          - link "Home" [ref=e14] [cursor=pointer]:
-            - /url: /
-          - link "Launches" [ref=e15] [cursor=pointer]:
-            - /url: /launches
-          - link "Live" [ref=e16] [cursor=pointer]:
-            - /url: /live
-          - link "Agencies" [ref=e17] [cursor=pointer]:
-            - /url: /explorers
-          - link "Vehicles" [ref=e18] [cursor=pointer]:
-            - /url: /vehicles
-        - generic [ref=e21]:
-          - button "Explorer" [ref=e22] [cursor=pointer]:
-            - img [ref=e23]
-            - generic [ref=e25]: Explorer
-          - button "Cadet" [pressed] [ref=e26] [cursor=pointer]:
-            - img [ref=e27]
-            - generic [ref=e32]: Cadet
-          - button "Mission Control" [ref=e33] [cursor=pointer]:
-            - img [ref=e34]
-            - generic [ref=e41]: Mission Control
-    - main [ref=e42]:
-      - generic [ref=e43]:
-        - generic [ref=e44]:
-          - heading "Videos" [level=1] [ref=e45]
-          - paragraph [ref=e46]: Live streams, launch highlights, and educational content
-        - generic [ref=e47]:
-          - button "All Videos" [ref=e48] [cursor=pointer]:
-            - img [ref=e49]
-            - text: All Videos
-          - button "Live 1" [ref=e51] [cursor=pointer]:
-            - img [ref=e52]
-            - text: Live
-            - generic [ref=e58]:
-              - img [ref=e59]
-              - text: "1"
-          - button "Launches" [ref=e61] [cursor=pointer]:
-            - img [ref=e62]
-            - text: Launches
-          - button "Educational" [ref=e64] [cursor=pointer]:
-            - img [ref=e65]
-            - text: Educational
-          - button "Documentary" [ref=e68] [cursor=pointer]:
-            - img [ref=e69]
-            - text: Documentary
-          - button "News" [ref=e71] [cursor=pointer]:
-            - img [ref=e72]
-            - text: News
-        - generic [ref=e74]:
-          - generic [ref=e75]:
-            - img [ref=e76]
-            - heading "Live Streams" [level=2] [ref=e82]
-          - generic [ref=e86] [cursor=pointer]:
-            - 'link "🔴 LIVE: SpaceX Starship Flight Test LIVE" [ref=e87]':
+        - link "Launches" [ref=e14] [cursor=pointer]:
+          - /url: /launches
+        - link "Live" [ref=e15] [cursor=pointer]:
+          - /url: /live
+        - link "Agencies" [ref=e16] [cursor=pointer]:
+          - /url: /explorers
+        - link "Vehicles" [ref=e17] [cursor=pointer]:
+          - /url: /vehicles
+      - generic [ref=e18]:
+        - generic [ref=e20]:
+          - button "Explorer" [ref=e21]:
+            - img [ref=e22]
+            - text: Explorer
+          - button "Cadet" [pressed] [ref=e24]:
+            - img [ref=e25]
+            - text: Cadet
+          - button "Mission Control" [ref=e30]:
+            - img [ref=e31]
+            - text: Mission Control
+        - button "Toggle menu" [ref=e38]:
+          - img [ref=e39]
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - heading "Videos" [level=1] [ref=e43]
+        - paragraph [ref=e44]: Live streams, launch highlights, and educational content
+      - generic [ref=e45]:
+        - button "All Videos" [ref=e46]:
+          - img [ref=e47]
+          - text: All Videos
+        - button "Live 1" [ref=e49]:
+          - img [ref=e50]
+          - text: Live
+          - generic [ref=e56]:
+            - img [ref=e57]
+            - text: "1"
+        - button "Launches" [ref=e59]:
+          - img [ref=e60]
+          - text: Launches
+        - button "Educational" [ref=e62]:
+          - img [ref=e63]
+          - text: Educational
+        - button "Documentary" [ref=e66]:
+          - img [ref=e67]
+          - text: Documentary
+        - button "News" [ref=e69]:
+          - img [ref=e70]
+          - text: News
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - img [ref=e74]
+          - heading "Live Streams" [level=2] [ref=e80]
+        - generic [ref=e84]:
+          - 'link "🔴 LIVE: SpaceX Starship Flight Test LIVE" [ref=e85] [cursor=pointer]':
+            - /url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+            - 'img "🔴 LIVE: SpaceX Starship Flight Test" [ref=e86]'
+            - img [ref=e90]
+            - generic [ref=e93]:
+              - img [ref=e94]
+              - img [ref=e96]
+              - text: LIVE
+          - generic [ref=e102]:
+            - 'link "🔴 LIVE: SpaceX Starship Flight Test" [ref=e103] [cursor=pointer]':
               - /url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-              - 'img "🔴 LIVE: SpaceX Starship Flight Test" [ref=e89]'
-              - img [ref=e93]
-              - generic [ref=e96]:
-                - img [ref=e97]
-                - img [ref=e99]
-                - text: LIVE
-            - generic [ref=e105]:
-              - 'link "🔴 LIVE: SpaceX Starship Flight Test" [ref=e106]':
-                - /url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-              - generic [ref=e107]:
-                - link "SpaceX" [ref=e108]:
-                  - /url: https://www.youtube.com/spacex
-                - generic [ref=e109]:
-                  - img [ref=e110]
-                  - generic [ref=e113]: 125.4K
-        - generic [ref=e114]:
-          - heading "Recent Videos" [level=2] [ref=e115]
-          - generic [ref=e116]:
-            - generic [ref=e119] [cursor=pointer]:
-              - link "Falcon 9 Starlink Launch Highlights 3:00" [ref=e120]:
+            - generic [ref=e104]:
+              - link "SpaceX" [ref=e105] [cursor=pointer]:
+                - /url: https://www.youtube.com/spacex
+              - generic [ref=e106]:
+                - img [ref=e107]
+                - text: 125.4K
+      - generic [ref=e110]:
+        - heading "Recent Videos" [level=2] [ref=e111]
+        - generic [ref=e112]:
+          - generic [ref=e115]:
+            - link "Falcon 9 Starlink Launch Highlights 3:00" [ref=e116] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=abc123
+              - img "Falcon 9 Starlink Launch Highlights" [ref=e117]
+              - img [ref=e121]
+              - generic [ref=e123]: 3:00
+            - generic [ref=e124]:
+              - link "Falcon 9 Starlink Launch Highlights" [ref=e125] [cursor=pointer]:
                 - /url: https://www.youtube.com/watch?v=abc123
-                - img "Falcon 9 Starlink Launch Highlights" [ref=e122]
-                - img [ref=e126]
-                - generic [ref=e128]: 3:00
-              - generic [ref=e129]:
-                - link "Falcon 9 Starlink Launch Highlights" [ref=e130]:
-                  - /url: https://www.youtube.com/watch?v=abc123
-                - generic [ref=e131]:
-                  - link "SpaceX" [ref=e132]:
-                    - /url: https://www.youtube.com/spacex
-                  - generic [ref=e133]:
-                    - img [ref=e134]
-                    - generic [ref=e137]: 450.2K
-            - generic [ref=e140] [cursor=pointer]:
-              - link "Inside the Vehicle Assembly Building 12:00" [ref=e141]:
+              - generic [ref=e126]:
+                - link "SpaceX" [ref=e127] [cursor=pointer]:
+                  - /url: https://www.youtube.com/spacex
+                - generic [ref=e128]:
+                  - img [ref=e129]
+                  - text: 450.2K
+          - generic [ref=e134]:
+            - link "Inside the Vehicle Assembly Building 12:00" [ref=e135] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=def456
+              - img "Inside the Vehicle Assembly Building" [ref=e136]
+              - img [ref=e140]
+              - generic [ref=e142]: 12:00
+            - generic [ref=e143]:
+              - link "Inside the Vehicle Assembly Building" [ref=e144] [cursor=pointer]:
                 - /url: https://www.youtube.com/watch?v=def456
-                - img "Inside the Vehicle Assembly Building" [ref=e143]
-                - img [ref=e147]
-                - generic [ref=e149]: 12:00
-              - generic [ref=e150]:
-                - link "Inside the Vehicle Assembly Building" [ref=e151]:
-                  - /url: https://www.youtube.com/watch?v=def456
-                - generic [ref=e152]:
-                  - link "NASA" [ref=e153]:
-                    - /url: https://www.youtube.com/nasa
-                  - generic [ref=e154]:
-                    - img [ref=e155]
-                    - generic [ref=e158]: 892.1K
-            - generic [ref=e161] [cursor=pointer]:
-              - link "How Rocket Engines Work 20:00" [ref=e162]:
+              - generic [ref=e145]:
+                - link "NASA" [ref=e146] [cursor=pointer]:
+                  - /url: https://www.youtube.com/nasa
+                - generic [ref=e147]:
+                  - img [ref=e148]
+                  - text: 892.1K
+          - generic [ref=e153]:
+            - link "How Rocket Engines Work 20:00" [ref=e154] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=ghi789
+              - img "How Rocket Engines Work" [ref=e155]
+              - img [ref=e159]
+              - generic [ref=e161]: 20:00
+            - generic [ref=e162]:
+              - link "How Rocket Engines Work" [ref=e163] [cursor=pointer]:
                 - /url: https://www.youtube.com/watch?v=ghi789
-                - img "How Rocket Engines Work" [ref=e164]
-                - img [ref=e168]
-                - generic [ref=e170]: 20:00
-              - generic [ref=e171]:
-                - link "How Rocket Engines Work" [ref=e172]:
-                  - /url: https://www.youtube.com/watch?v=ghi789
-                - generic [ref=e173]:
-                  - link "Everyday Astronaut" [ref=e174]:
-                    - /url: https://www.youtube.com/everydayastronaut
-                  - generic [ref=e175]:
-                    - img [ref=e176]
-                    - generic [ref=e179]: 1.2M
-            - generic [ref=e182] [cursor=pointer]:
-              - link "Artemis Mission Update 8:00" [ref=e183]:
+              - generic [ref=e164]:
+                - link "Everyday Astronaut" [ref=e165] [cursor=pointer]:
+                  - /url: https://www.youtube.com/everydayastronaut
+                - generic [ref=e166]:
+                  - img [ref=e167]
+                  - text: 1.2M
+          - generic [ref=e172]:
+            - link "Artemis Mission Update 8:00" [ref=e173] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=jkl012
+              - img "Artemis Mission Update" [ref=e174]
+              - img [ref=e178]
+              - generic [ref=e180]: 8:00
+            - generic [ref=e181]:
+              - link "Artemis Mission Update" [ref=e182] [cursor=pointer]:
                 - /url: https://www.youtube.com/watch?v=jkl012
-                - img "Artemis Mission Update" [ref=e185]
-                - img [ref=e189]
-                - generic [ref=e191]: 8:00
-              - generic [ref=e192]:
-                - link "Artemis Mission Update" [ref=e193]:
-                  - /url: https://www.youtube.com/watch?v=jkl012
-                - generic [ref=e194]:
-                  - link "NASA" [ref=e195]:
-                    - /url: https://www.youtube.com/nasa
-                  - generic [ref=e196]:
-                    - img [ref=e197]
-                    - generic [ref=e200]: 678.9K
-            - generic [ref=e203] [cursor=pointer]:
-              - link "Blue Origin New Shepard Launch 5:00" [ref=e204]:
+              - generic [ref=e183]:
+                - link "NASA" [ref=e184] [cursor=pointer]:
+                  - /url: https://www.youtube.com/nasa
+                - generic [ref=e185]:
+                  - img [ref=e186]
+                  - text: 678.9K
+          - generic [ref=e191]:
+            - link "Blue Origin New Shepard Launch 5:00" [ref=e192] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=mno345
+              - img "Blue Origin New Shepard Launch" [ref=e193]
+              - img [ref=e197]
+              - generic [ref=e199]: 5:00
+            - generic [ref=e200]:
+              - link "Blue Origin New Shepard Launch" [ref=e201] [cursor=pointer]:
                 - /url: https://www.youtube.com/watch?v=mno345
-                - img "Blue Origin New Shepard Launch" [ref=e206]
-                - img [ref=e210]
-                - generic [ref=e212]: 5:00
-              - generic [ref=e213]:
-                - link "Blue Origin New Shepard Launch" [ref=e214]:
-                  - /url: https://www.youtube.com/watch?v=mno345
-                - generic [ref=e215]:
-                  - link "Blue Origin" [ref=e216]:
-                    - /url: https://www.youtube.com/blueorigin
-                  - generic [ref=e217]:
-                    - img [ref=e218]
-                    - generic [ref=e221]: 234.5K
-        - paragraph [ref=e223]: "Note: Video data is currently mocked. Phase 2 will integrate YouTube Data API for real-time content."
-    - contentinfo [ref=e224]:
-      - generic [ref=e225]:
-        - generic [ref=e226]:
-          - generic [ref=e227]:
-            - generic [ref=e228]:
-              - img [ref=e229]
-              - generic [ref=e234]: RocketWatch
-            - paragraph [ref=e235]: For the love of space. A free, inclusive space launch tracking platform for everyone from 5-year-olds to aerospace engineers.
-            - generic [ref=e236]:
-              - link "GitHub" [ref=e237] [cursor=pointer]:
-                - /url: https://github.com
-                - img [ref=e238]
-              - link "Twitter" [ref=e241] [cursor=pointer]:
-                - /url: https://twitter.com
-                - img [ref=e242]
-              - link "YouTube" [ref=e244] [cursor=pointer]:
-                - /url: https://youtube.com
-                - img [ref=e245]
-          - generic [ref=e248]:
-            - heading "Explore" [level=3] [ref=e249]
-            - list [ref=e250]:
-              - listitem [ref=e251]:
-                - link "Launches" [ref=e252] [cursor=pointer]:
-                  - /url: /launches
-              - listitem [ref=e253]:
-                - link "Live" [ref=e254] [cursor=pointer]:
-                  - /url: /live
-              - listitem [ref=e255]:
-                - link "Agencies" [ref=e256] [cursor=pointer]:
-                  - /url: /explorers
-              - listitem [ref=e257]:
-                - link "Vehicles" [ref=e258] [cursor=pointer]:
-                  - /url: /vehicles
-          - generic [ref=e259]:
-            - heading "Data Sources" [level=3] [ref=e260]
-            - list [ref=e261]:
-              - listitem [ref=e262]:
-                - link "The Space Devs" [ref=e263] [cursor=pointer]:
-                  - /url: https://thespacedevs.com
-              - listitem [ref=e264]:
-                - link "Launch Library 2" [ref=e265] [cursor=pointer]:
-                  - /url: https://thespacedevs.com/llapi
-        - generic [ref=e266]:
-          - paragraph [ref=e267]: © 2025 RocketWatch. Built with love for space exploration.
-          - paragraph [ref=e268]: Free forever. No accounts. No paywalls. Just space. 🚀
-  - alert [ref=e269]
+              - generic [ref=e202]:
+                - link "Blue Origin" [ref=e203] [cursor=pointer]:
+                  - /url: https://www.youtube.com/blueorigin
+                - generic [ref=e204]:
+                  - img [ref=e205]
+                  - text: 234.5K
+      - paragraph [ref=e209]: "Note: Video data is currently mocked. Phase 2 will integrate YouTube Data API for real-time content."
+  - contentinfo [ref=e210]:
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - img [ref=e215]
+            - text: RocketWatch
+          - paragraph [ref=e220]: For the love of space. A free, inclusive space launch tracking platform for everyone from 5-year-olds to aerospace engineers.
+          - generic [ref=e221]:
+            - link "GitHub" [ref=e222] [cursor=pointer]:
+              - /url: https://github.com
+              - img [ref=e223]
+            - link "Twitter" [ref=e226] [cursor=pointer]:
+              - /url: https://twitter.com
+              - img [ref=e227]
+            - link "YouTube" [ref=e229] [cursor=pointer]:
+              - /url: https://youtube.com
+              - img [ref=e230]
+        - generic [ref=e233]:
+          - heading "Explore" [level=3] [ref=e234]
+          - list [ref=e235]:
+            - listitem [ref=e236]:
+              - link "Launches" [ref=e237] [cursor=pointer]:
+                - /url: /launches
+            - listitem [ref=e238]:
+              - link "Live" [ref=e239] [cursor=pointer]:
+                - /url: /live
+            - listitem [ref=e240]:
+              - link "Agencies" [ref=e241] [cursor=pointer]:
+                - /url: /explorers
+            - listitem [ref=e242]:
+              - link "Vehicles" [ref=e243] [cursor=pointer]:
+                - /url: /vehicles
+        - generic [ref=e244]:
+          - heading "Data Sources" [level=3] [ref=e245]
+          - list [ref=e246]:
+            - listitem [ref=e247]:
+              - link "The Space Devs" [ref=e248] [cursor=pointer]:
+                - /url: https://thespacedevs.com
+            - listitem [ref=e249]:
+              - link "Launch Library 2" [ref=e250] [cursor=pointer]:
+                - /url: https://thespacedevs.com/llapi
+      - generic [ref=e251]:
+        - paragraph [ref=e252]: © 2025 RocketWatch. Built with love for space exploration.
+        - paragraph [ref=e253]: Free forever. No accounts. No paywalls. Just space. 🚀
 ```

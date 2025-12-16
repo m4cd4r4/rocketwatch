@@ -14,7 +14,8 @@
       "Bash(taskkill:*)",
       "Bash(npx playwright install:*)",
       "Bash(npx playwright test:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(pkill:*)"
     ]
   }
 }
