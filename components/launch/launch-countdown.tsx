@@ -20,7 +20,9 @@ interface LaunchCountdownProps {
 }
 
 function calculateTimeRemaining(targetDate: Date): TimeRemaining {
-  const total = targetDate.getTime() - Date.now();
+  // Ensure targetDate is a Date object (handle JSON string dates)
+  const date = targetDate instanceof Date ? targetDate : new Date(targetDate);
+  const total = date.getTime() - Date.now();
 
   if (total <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0, total: 0 };
