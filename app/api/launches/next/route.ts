@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getLL2Client } from '@/lib/external/launch-library';
 import { transformLaunch } from '@/lib/utils/transforms';
+import { getNextLaunch } from '@/lib/data/mock-launches';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -26,10 +27,23 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error('Failed to fetch next launch:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch launch data' },
-      { status: 500 }
-    );
+    console.error('Failed to fetch next launch from API, using mock data:', error);
+
+    // Fallback to mock data
+    const mockLaunch = getNextLaunch();
+
+    if (!mockLaunch) {
+      return NextResponse.json(
+        { error: 'No upcoming launches available' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(mockLaunch, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+        'X-Data-Source': 'mock',
+      },
+    });
   }
 }

@@ -15,7 +15,8 @@
       "Bash(npx playwright install:*)",
       "Bash(npx playwright test:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(python -m json.tool:*)"
     ]
   }
 }
