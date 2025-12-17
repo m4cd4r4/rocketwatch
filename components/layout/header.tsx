@@ -40,10 +40,10 @@ export function Header(): JSX.Element {
           <Link
             href="/"
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            aria-label="RocketWatch home"
+            aria-label="The Great Expanse home"
           >
             <Rocket className="h-6 w-6 text-rocket-orange" aria-hidden="true" />
-            <span className="font-display text-xl font-bold text-starlight">RocketWatch</span>
+            <span className="font-display text-xl font-bold text-starlight">The Great Expanse</span>
           </Link>
 
           {/* Desktop Navigation */}

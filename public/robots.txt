@@ -1,12 +1,12 @@
-# RocketWatch robots.txt
+# The Great Expanse robots.txt
 User-agent: *
 Allow: /
 
+# Disallow API routes
+Disallow: /api/
+
 # Sitemap
-Sitemap: https://rocketwatch.app/sitemap.xml
+Sitemap: https://thegreatexpanse.com/sitemap.xml
 
 # Crawl-delay for politeness
 Crawl-delay: 0
-
-# Disallow admin or API routes if needed in the future
-# Disallow: /api/

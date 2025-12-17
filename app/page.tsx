@@ -6,19 +6,19 @@ import { FeaturedVideos } from '@/components/home/featured-videos';
 import { AgencyRow } from '@/components/home/agency-row';
 
 export const metadata: Metadata = {
-  title: 'RocketWatch - Track Every Space Launch',
+  title: 'Home',
   description:
-    'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
+    'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch. Free forever, no accounts, no paywalls.',
   openGraph: {
-    title: 'RocketWatch - Track Every Space Launch',
+    title: 'The Great Expanse - Track Every Space Launch',
     description:
       'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RocketWatch - Track Every Space Launch',
+    title: 'The Great Expanse - Track Every Space Launch',
     description:
-      'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams, explore space agencies, and never miss a launch.',
+      'Track upcoming rocket launches from SpaceX, NASA, ESA, and more. Watch live streams and never miss a launch.',
   },
 };
 

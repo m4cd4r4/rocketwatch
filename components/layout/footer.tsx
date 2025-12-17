@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Rocket, Github, Twitter, Youtube } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 
 const FOOTER_LINKS = [
   { href: '/launches', label: 'Launches' },
@@ -24,41 +24,12 @@ export function Footer(): JSX.Element {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Rocket className="h-6 w-6 text-rocket-orange" />
-              <span className="font-display text-xl font-bold text-starlight">RocketWatch</span>
+              <span className="font-display text-xl font-bold text-starlight">The Great Expanse</span>
             </div>
             <p className="text-sm text-stardust max-w-md">
               For the love of space. A free, inclusive space launch tracking platform for everyone
               from 5-year-olds to aerospace engineers.
             </p>
-            <div className="flex items-center gap-4 mt-6">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stardust hover:text-starlight transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stardust hover:text-starlight transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stardust hover:text-starlight transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -101,7 +72,7 @@ export function Footer(): JSX.Element {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-nebula flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-stardust">
-            © {currentYear} RocketWatch. Built with love for space exploration.
+            © {currentYear} The Great Expanse. Built with love for space exploration.
           </p>
           <p className="text-xs text-stardust">
             Free forever. No accounts. No paywalls. Just space. 🚀

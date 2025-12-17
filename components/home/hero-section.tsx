@@ -30,7 +30,7 @@ export function HeroSection(): JSX.Element {
 
         {error && (
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-4xl font-bold text-starlight md:text-6xl">RocketWatch</h1>
+            <h1 className="text-4xl font-bold text-starlight md:text-6xl">The Great Expanse</h1>
             <p className="text-xl text-mars-red">Failed to load launch data</p>
             <p className="text-stardust">Please try again later</p>
           </div>
