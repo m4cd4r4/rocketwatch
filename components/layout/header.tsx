@@ -18,7 +18,7 @@ const NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/launches', label: 'Launches' },
   { href: '/live', label: 'Live' },
-  { href: '/explorers', label: 'Agencies', hideInExplorer: true },
+  { href: '/agencies', label: 'Agencies', hideInExplorer: true },
   { href: '/vehicles', label: 'Vehicles', hideInExplorer: true },
 ];
 

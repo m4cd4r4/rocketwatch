@@ -4,7 +4,7 @@ import { Rocket, Github, Twitter, Youtube } from 'lucide-react';
 const FOOTER_LINKS = [
   { href: '/launches', label: 'Launches' },
   { href: '/live', label: 'Live' },
-  { href: '/explorers', label: 'Agencies' },
+  { href: '/agencies', label: 'Agencies' },
   { href: '/vehicles', label: 'Vehicles' },
 ];
 
