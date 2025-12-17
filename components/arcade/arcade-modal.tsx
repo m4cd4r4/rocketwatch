@@ -17,16 +17,9 @@ export function ArcadeModal({ isOpen, onClose }: ArcadeModalProps): JSX.Element 
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-      // Reset game selection when modal closes
+      // Reset game selection when modal opens
       setSelectedGame(null);
     }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -37,19 +30,17 @@ export function ArcadeModal({ isOpen, onClose }: ArcadeModalProps): JSX.Element 
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-void/95 backdrop-blur-sm overflow-auto"
+      className="fixed inset-0 z-[100] bg-void/95 backdrop-blur-sm flex items-start justify-center overflow-y-auto py-8"
       onClick={selectedGame ? undefined : onClose}
     >
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <div onClick={(e) => e.stopPropagation()} className="w-full max-w-fit">
-          {!selectedGame && (
-            <GameSelection onSelectGame={setSelectedGame} onClose={onClose} />
-          )}
-          {selectedGame === 'asteroids' && <AsteroidsGame onClose={onClose} onBack={handleBack} />}
-          {selectedGame === 'invaders' && <InvadersGame onClose={onClose} onBack={handleBack} />}
-          {selectedGame === 'snake' && <SnakeGame onClose={onClose} onBack={handleBack} />}
-          {selectedGame === 'breakout' && <BreakoutGame onClose={onClose} onBack={handleBack} />}
-        </div>
+      <div onClick={(e) => e.stopPropagation()} className="w-full max-w-fit px-4">
+        {!selectedGame && (
+          <GameSelection onSelectGame={setSelectedGame} onClose={onClose} />
+        )}
+        {selectedGame === 'asteroids' && <AsteroidsGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'invaders' && <InvadersGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'snake' && <SnakeGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'breakout' && <BreakoutGame onClose={onClose} onBack={handleBack} />}
       </div>
     </div>
   );
