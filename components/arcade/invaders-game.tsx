@@ -138,9 +138,46 @@ export function InvadersGame({ onClose, onBack }: InvadersGameProps): JSX.Elemen
         player.x += 5;
       }
 
-      // Draw player
-      ctx.fillStyle = '#ff6b2c';
-      ctx.fillRect(player.x, canvas.height - player.height - 10, player.width, player.height);
+      // Draw player (Starship-style rocket)
+      const playerY = canvas.height - player.height - 10;
+
+      // Main body (cylindrical silver rocket)
+      const bodyGradient = ctx.createLinearGradient(player.x, 0, player.x + player.width, 0);
+      bodyGradient.addColorStop(0, '#6b7280');
+      bodyGradient.addColorStop(0.5, '#d1d5db');
+      bodyGradient.addColorStop(1, '#6b7280');
+      ctx.fillStyle = bodyGradient;
+      ctx.fillRect(player.x + 10, playerY, 20, player.height);
+
+      // Nose cone (pointed top)
+      ctx.fillStyle = '#374151';
+      ctx.beginPath();
+      ctx.moveTo(player.x + 20, playerY - 10);
+      ctx.lineTo(player.x + 10, playerY);
+      ctx.lineTo(player.x + 30, playerY);
+      ctx.closePath();
+      ctx.fill();
+
+      // Grid fins (bottom)
+      ctx.fillStyle = '#1f2937';
+      ctx.fillRect(player.x, playerY + player.height - 8, 10, 8); // Left fin
+      ctx.fillRect(player.x + 30, playerY + player.height - 8, 10, 8); // Right fin
+
+      // Engine bells (3 Raptor engines)
+      ctx.fillStyle = '#111827';
+      ctx.beginPath();
+      ctx.arc(player.x + 13, playerY + player.height - 3, 3, 0, Math.PI * 2);
+      ctx.arc(player.x + 20, playerY + player.height - 3, 3, 0, Math.PI * 2);
+      ctx.arc(player.x + 27, playerY + player.height - 3, 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Engine flames
+      const flameGradient = ctx.createLinearGradient(0, playerY + player.height, 0, playerY + player.height + 10);
+      flameGradient.addColorStop(0, '#fbbf24');
+      flameGradient.addColorStop(0.5, '#f97316');
+      flameGradient.addColorStop(1, 'rgba(249, 115, 22, 0)');
+      ctx.fillStyle = flameGradient;
+      ctx.fillRect(player.x + 11, playerY + player.height, 18, 8 + Math.random() * 4);
 
       // Update and move aliens
       alienMoveCounter++;
@@ -168,17 +205,40 @@ export function InvadersGame({ onClose, onBack }: InvadersGameProps): JSX.Elemen
         });
       }
 
-      // Draw aliens
+      // Draw aliens (UFO style)
       aliens.forEach((alien) => {
         if (!alien.alive) return;
 
-        ctx.fillStyle = '#8b5cf6';
-        ctx.fillRect(alien.x, alien.y, alien.width, alien.height);
+        // UFO dome (top)
+        const domeGradient = ctx.createRadialGradient(
+          alien.x + alien.width / 2, alien.y + 8, 2,
+          alien.x + alien.width / 2, alien.y + 8, 12
+        );
+        domeGradient.addColorStop(0, '#a78bfa');
+        domeGradient.addColorStop(1, '#6b21a8');
+        ctx.fillStyle = domeGradient;
+        ctx.beginPath();
+        ctx.ellipse(alien.x + alien.width / 2, alien.y + 8, 12, 8, 0, 0, Math.PI * 2);
+        ctx.fill();
 
-        // Draw alien eyes
-        ctx.fillStyle = '#ff6b2c';
-        ctx.fillRect(alien.x + 8, alien.y + 8, 4, 4);
-        ctx.fillRect(alien.x + 18, alien.y + 8, 4, 4);
+        // UFO body (saucer)
+        const bodyGradient = ctx.createLinearGradient(alien.x, alien.y + 12, alien.x, alien.y + 22);
+        bodyGradient.addColorStop(0, '#8b5cf6');
+        bodyGradient.addColorStop(0.5, '#6b21a8');
+        bodyGradient.addColorStop(1, '#4c1d95');
+        ctx.fillStyle = bodyGradient;
+        ctx.beginPath();
+        ctx.ellipse(alien.x + alien.width / 2, alien.y + 17, 15, 5, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Pulsing lights
+        const lightIntensity = 0.5 + Math.sin(Date.now() / 200 + alien.x) * 0.5;
+        ctx.fillStyle = `rgba(251, 191, 36, ${lightIntensity})`;
+        ctx.beginPath();
+        ctx.arc(alien.x + 8, alien.y + 17, 2, 0, Math.PI * 2);
+        ctx.arc(alien.x + 15, alien.y + 17, 2, 0, Math.PI * 2);
+        ctx.arc(alien.x + 22, alien.y + 17, 2, 0, Math.PI * 2);
+        ctx.fill();
 
         // Aliens shoot randomly
         if (Math.random() < difficulty.shootChance) {

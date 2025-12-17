@@ -1,8 +1,8 @@
 'use client';
 
-import { Rocket, Zap, Move, Shield } from 'lucide-react';
+import { Rocket, Zap, Move, Shield, Target, Plane, Crosshair, Moon } from 'lucide-react';
 
-export type GameType = 'asteroids' | 'invaders' | 'snake' | 'breakout';
+export type GameType = 'asteroids' | 'invaders' | 'snake' | 'breakout' | 'missile-command' | 'thrust' | 'defender' | 'lunar-lander';
 
 interface GameSelectionProps {
   onSelectGame: (game: GameType) => void;
@@ -45,6 +45,34 @@ export function GameSelection({ onSelectGame, onClose }: GameSelectionProps): JS
       title: 'Asteroid Defense',
       description: 'Break through asteroid barriers to protect the station',
       icon: <Shield className="h-8 w-8" />,
+      difficulty: 'Medium',
+    },
+    {
+      id: 'missile-command',
+      title: 'Missile Command',
+      description: 'Strategically defend cities from incoming missile attacks',
+      icon: <Target className="h-8 w-8" />,
+      difficulty: 'Hard',
+    },
+    {
+      id: 'thrust',
+      title: 'Thrust',
+      description: 'Master gravity and inertia in a cave-flying challenge',
+      icon: <Plane className="h-8 w-8" />,
+      difficulty: 'Hard',
+    },
+    {
+      id: 'defender',
+      title: 'Defender',
+      description: 'Protect humanoids from alien abduction in this classic shooter',
+      icon: <Crosshair className="h-8 w-8" />,
+      difficulty: 'Medium',
+    },
+    {
+      id: 'lunar-lander',
+      title: 'Lunar Lander',
+      description: 'Execute precise landings with limited fuel and physics',
+      icon: <Moon className="h-8 w-8" />,
       difficulty: 'Medium',
     },
   ];

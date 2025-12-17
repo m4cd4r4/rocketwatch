@@ -6,6 +6,10 @@ import { AsteroidsGame } from './asteroids-game';
 import { InvadersGame } from './invaders-game';
 import { SnakeGame } from './snake-game';
 import { BreakoutGame } from './breakout-game';
+import { MissileCommandGame } from './missile-command-game';
+import { ThrustGame } from './thrust-game';
+import { DefenderGame } from './defender-game';
+import { LunarLanderGame } from './lunar-lander-game';
 
 interface ArcadeModalProps {
   isOpen: boolean;
@@ -41,6 +45,10 @@ export function ArcadeModal({ isOpen, onClose }: ArcadeModalProps): JSX.Element 
         {selectedGame === 'invaders' && <InvadersGame onClose={onClose} onBack={handleBack} />}
         {selectedGame === 'snake' && <SnakeGame onClose={onClose} onBack={handleBack} />}
         {selectedGame === 'breakout' && <BreakoutGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'missile-command' && <MissileCommandGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'thrust' && <ThrustGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'defender' && <DefenderGame onClose={onClose} onBack={handleBack} />}
+        {selectedGame === 'lunar-lander' && <LunarLanderGame onClose={onClose} onBack={handleBack} />}
       </div>
     </div>
   );
