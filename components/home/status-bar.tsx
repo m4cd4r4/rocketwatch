@@ -26,8 +26,8 @@ export function StatusBar(): JSX.Element {
 
   // Calculate statistics
   const liveLaunches = launches.filter((l) => l.webcastLive).length;
-  const launchesToday = launches.filter((l) => isToday(l.net)).length;
-  const launchesThisWeek = launches.filter((l) => isThisWeek(l.net)).length;
+  const launchesToday = launches.filter((l) => isToday(parseISO(l.net))).length;
+  const launchesThisWeek = launches.filter((l) => isThisWeek(parseISO(l.net))).length;
   const totalUpcoming = launches.length;
 
   const stats = [

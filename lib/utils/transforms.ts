@@ -87,9 +87,9 @@ export function transformLaunch(ll2Launch: LL2Launch): Launch {
     name: ll2Launch.name,
     slug: ll2Launch.slug,
     status,
-    net: new Date(ll2Launch.net),
-    windowStart: ll2Launch.window_start ? new Date(ll2Launch.window_start) : undefined,
-    windowEnd: ll2Launch.window_end ? new Date(ll2Launch.window_end) : undefined,
+    net: ll2Launch.net,
+    windowStart: ll2Launch.window_start || undefined,
+    windowEnd: ll2Launch.window_end || undefined,
     holdReason: ll2Launch.hold_reason || undefined,
     provider,
     vehicle,
@@ -102,7 +102,7 @@ export function transformLaunch(ll2Launch: LL2Launch): Launch {
     description: generateAgeAdaptedContent(
       ll2Launch.mission?.description || `${ll2Launch.name} mission`
     ),
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   };
 }

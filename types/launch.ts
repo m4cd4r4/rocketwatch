@@ -9,9 +9,9 @@ export interface Launch {
   status: LaunchStatus;
 
   // Timing
-  net: Date; // No Earlier Than
-  windowStart?: Date;
-  windowEnd?: Date;
+  net: string; // No Earlier Than (ISO string from API)
+  windowStart?: string;
+  windowEnd?: string;
   holdReason?: string;
 
   // Relations
@@ -31,8 +31,8 @@ export interface Launch {
   // Age-adapted content
   description: AgeAdaptedContent;
 
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface LaunchStatus {

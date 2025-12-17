@@ -24,7 +24,15 @@
       "Bash(node -e:*)",
       "Bash(node check-lighthouse.js:*)",
       "Bash(node parse-lighthouse.js:*)",
-      "Bash(npm start)"
+      "Bash(npm start)",
+      "Bash(timeout 60 bash:*)",
+      "Bash(for domain in expanse.space thegreatexpanse.com theexpanse.com infinite.space theexpanse.space beyond.space vastness.space frontiers.space)",
+      "Bash(do echo \"Checking $domain...\")",
+      "Bash(nslookup:*)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel:*)"
     ]
   }
 }

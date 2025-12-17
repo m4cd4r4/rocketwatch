@@ -9,7 +9,7 @@ import { Spinner } from '../ui/spinner';
 import { LaunchCountdown } from '../launch/launch-countdown';
 import { Rocket, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { useUserPreferences } from '@/lib/stores/preferences';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 export function UpcomingLaunches(): JSX.Element {
   const { data: launches, isLoading, error } = useUpcomingLaunches(6);
@@ -94,7 +94,7 @@ export function UpcomingLaunches(): JSX.Element {
                   <div className="space-y-2 text-sm text-stardust">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-plasma-blue" />
-                      <span>{format(launch.net, 'PPp')}</span>
+                      <span>{format(parseISO(launch.net), 'PPp')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-aurora-teal" />

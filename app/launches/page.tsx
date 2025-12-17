@@ -4,7 +4,7 @@ import { useNextLaunch, useUpcomingLaunches } from '@/lib/queries/launches';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Spinner } from '@/components/ui/spinner';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { Rocket, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -74,7 +74,7 @@ export default function LaunchesPage(): JSX.Element {
                   <div>
                     <p className="text-sm font-medium text-starlight">Launch Time</p>
                     <p className="text-sm text-stardust">
-                      {format(nextLaunch.net, 'PPpp')}
+                      {format(parseISO(nextLaunch.net), 'PPpp')}
                     </p>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function LaunchesPage(): JSX.Element {
                   <div className="flex items-center gap-4 text-sm text-stardust">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      {format(launch.net, 'PPp')}
+                      {format(parseISO(launch.net), 'PPp')}
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />

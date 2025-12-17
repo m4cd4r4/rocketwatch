@@ -13,13 +13,13 @@ interface TimeRemaining {
 }
 
 interface LaunchCountdownProps {
-  targetDate: Date;
+  targetDate: Date | string;
   size?: 'small' | 'medium' | 'large' | 'hero';
   showLabels?: boolean;
   className?: string;
 }
 
-function calculateTimeRemaining(targetDate: Date): TimeRemaining {
+function calculateTimeRemaining(targetDate: Date | string): TimeRemaining {
   // Ensure targetDate is a Date object (handle JSON string dates)
   const date = targetDate instanceof Date ? targetDate : new Date(targetDate);
   const total = date.getTime() - Date.now();
