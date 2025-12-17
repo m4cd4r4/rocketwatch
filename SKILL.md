@@ -1,9 +1,10 @@
-# RocketWatch — Claude Code Skills Document
+# The Great Expanse — Claude Code Skills Document
 
-> **Project:** RocketWatch — A free, inclusive space launch tracking platform
+> **Project:** The Great Expanse — A free, inclusive space launch tracking platform
+> **Live Site:** https://www.thegreatexpanse.com
 > **Version:** 1.0
-> **Last Updated:** December 15, 2024
-> **Timeline:** 2-week MVP sprint starting today
+> **Last Updated:** December 18, 2024
+> **Status:** ✅ Launched!
 
 ---
 
@@ -26,9 +27,9 @@
 
 ## 1. Project Vision
 
-### What is RocketWatch?
+### What is The Great Expanse?
 
-A free, inclusive space hub that serves everyone from 5-year-olds to aerospace engineers. Think "Linear meets NASA" — premium dark UI with space aesthetics, age-adaptive content, and comprehensive coverage of all space launches past, present, and future.
+A free, inclusive space hub that serves everyone from 5-year-olds to aerospace engineers. Think "Linear meets NASA" — premium dark UI with space aesthetics, age-adaptive content, comprehensive coverage of all space launches, and a built-in arcade to play while waiting for launches!
 
 ### Core Principles
 
@@ -77,15 +78,16 @@ All confirmed decisions for this project:
 
 | Area | Decision |
 |------|----------|
-| **Name** | RocketWatch (working title) |
+| **Name** | The Great Expanse |
 | **Tagline** | "For the love of space" |
-| **Hosting** | Vercel |
-| **Domain** | TBD — check rocketwatch.io, .app, .space, .live |
+| **Hosting** | Vercel (Edge Functions) |
+| **Domain** | ✅ thegreatexpanse.com |
 | **Light Mode** | Dark only (no light mode) |
 | **User Accounts** | None — anonymous, stateless |
 | **Monetization** | None — passion project |
-| **Mascot** | Yes — "Cosmo" (simple SVG robot), Explorer mode only, Phase 2 |
-| **Sound Effects** | Yes — optional ambient soundscapes, Explorer mode only, Phase 2 |
+| **Arcade Games** | ✅ 4 games (Asteroids, Space Invaders, Snake, Breakout) |
+| **Mascot** | "Cosmo" (simple SVG robot), Explorer mode only, Phase 2 |
+| **Sound Effects** | Optional ambient soundscapes, Explorer mode only, Phase 2 |
 | **Starfield Style** | Hybrid (photo base + animated star overlay) |
 | **History Depth** | Full (1940s V-2 onwards), pre-1957 de-emphasized in Explorer mode |
 | **Content Writing** | AI-assisted drafts, human reviewed |
