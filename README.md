@@ -61,8 +61,8 @@ Three inclusive experience modes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/m4cd4r4/rocketwatch.git
-cd rocketwatch
+git clone https://github.com/m4cd4r4/thegreatexpanse.git
+cd thegreatexpanse
 
 # Install dependencies
 npm install

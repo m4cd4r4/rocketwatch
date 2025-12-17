@@ -30,7 +30,7 @@ export const useUserPreferences = create<UserPreferencesState>()(
       setHasVisitedBefore: (visited) => set({ hasVisitedBefore: visited }),
     }),
     {
-      name: 'rocketwatch-preferences',
+      name: 'thegreatexpanse-preferences',
     }
   )
 );
