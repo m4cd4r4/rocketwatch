@@ -303,13 +303,18 @@ export function AsteroidsGame({ onClose }: AsteroidsGameProps): JSX.Element {
             asteroids.splice(j, 1);
             bullets.splice(i, 1);
 
-            // Spawn new asteroids if getting low
-            if (asteroids.length < 2) {
+            // Spawn new asteroids to keep game interesting
+            if (asteroids.length < difficulty.asteroidCount) {
               spawnAsteroids(1);
             }
             break;
           }
         }
+      }
+
+      // Ensure minimum asteroids are always present
+      if (asteroids.length < Math.max(2, difficulty.asteroidCount - 2)) {
+        spawnAsteroids(1);
       }
 
       animationFrameId = requestAnimationFrame(gameLoop);
