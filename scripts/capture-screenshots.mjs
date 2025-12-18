@@ -17,11 +17,12 @@ async function captureScreenshots() {
 
   try {
     console.log('🚀 Navigating to the homepage...');
-    await page.goto('http://localhost:3000');
+    await page.goto('https://www.thegreatexpanse.com');
     await page.waitForLoadState('networkidle');
 
     console.log('🎮 Opening Arcade modal...');
-    await page.click('text=Arcade');
+    // Click the Arcade button
+    await page.click('button[aria-label="Play Asteroids"]');
     await page.waitForSelector('text=Space Arcade', { timeout: 5000 });
     await page.waitForTimeout(1000);
 
