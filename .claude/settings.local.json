@@ -34,7 +34,8 @@
       "Bash(vercel --version:*)",
       "Bash(vercel:*)",
       "Bash(node test-arcade.mjs:*)",
-      "Bash(node test-production.mjs:*)"
+      "Bash(node test-production.mjs:*)",
+      "Bash(node scripts/capture-screenshots.mjs:*)"
     ]
   }
 }

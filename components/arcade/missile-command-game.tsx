@@ -513,7 +513,12 @@ export function MissileCommandGame({ onClose, onBack }: MissileCommandGameProps)
         setPaused(p => !p);
       }
       if (e.key === 'r' || e.key === 'R') {
-        window.location.reload();
+        if (gameOver) {
+          setScore(0);
+          setWave(1);
+          setGameOver(false);
+          setPaused(false);
+        }
       }
       if (e.key === 'Escape') {
         onBack();
@@ -533,6 +538,13 @@ export function MissileCommandGame({ onClose, onBack }: MissileCommandGameProps)
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [ageMode, onBack, paused, gameOver]);
+
+  const handleRestart = () => {
+    setScore(0);
+    setWave(1);
+    setGameOver(false);
+    setPaused(false);
+  };
 
   return (
     <div className="relative bg-cosmos/95 backdrop-blur-sm rounded-lg shadow-2xl border border-nebula p-6 max-w-fit">
@@ -590,7 +602,7 @@ export function MissileCommandGame({ onClose, onBack }: MissileCommandGameProps)
               <p className="text-stardust mb-6">Wave: {wave}</p>
               <button
                 type="button"
-                onClick={() => window.location.reload()}
+                onClick={handleRestart}
                 className="px-6 py-3 bg-rocket-orange hover:bg-rocket-orange/80 text-starlight rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
               >
                 <RotateCcw className="h-5 w-5" />

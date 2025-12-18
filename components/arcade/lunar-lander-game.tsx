@@ -377,7 +377,13 @@ export function LunarLanderGame({ onClose, onBack }: LunarLanderGameProps): JSX.
         setPaused(p => !p);
       }
       if (e.key === 'r' || e.key === 'R') {
-        window.location.reload();
+        if (gameOver || landed) {
+          setScore(0);
+          setLevel(1);
+          setGameOver(false);
+          setLanded(false);
+          setPaused(false);
+        }
       }
       if (e.key === 'Escape') {
         onBack();
@@ -399,6 +405,14 @@ export function LunarLanderGame({ onClose, onBack }: LunarLanderGameProps): JSX.
       window.removeEventListener('keyup', handleKeyUp);
     };
   }, [ageMode, onBack, paused, gameOver, landed]);
+
+  const handleRestart = () => {
+    setScore(0);
+    setLevel(1);
+    setGameOver(false);
+    setLanded(false);
+    setPaused(false);
+  };
 
   return (
     <div className="relative bg-cosmos/95 backdrop-blur-sm rounded-lg shadow-2xl border border-nebula p-6 max-w-fit">
@@ -455,7 +469,7 @@ export function LunarLanderGame({ onClose, onBack }: LunarLanderGameProps): JSX.
               <p className="text-xl text-starlight mb-6">Final Score: {score}</p>
               <button
                 type="button"
-                onClick={() => window.location.reload()}
+                onClick={handleRestart}
                 className="px-6 py-3 bg-rocket-orange hover:bg-rocket-orange/80 text-starlight rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
               >
                 <RotateCcw className="h-5 w-5" />
@@ -477,7 +491,6 @@ export function LunarLanderGame({ onClose, onBack }: LunarLanderGameProps): JSX.
                 onClick={() => {
                   setLanded(false);
                   setLevel(level + 1);
-                  window.location.reload();
                 }}
                 className="px-6 py-3 bg-aurora-teal hover:bg-aurora-teal/80 text-starlight rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
               >
